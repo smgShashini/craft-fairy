@@ -5,7 +5,7 @@ $vintage-primary: mat.define-palette(mat.$brown-palette);
 $vintage-accent: mat.define-palette(mat.$green-palette, A200, A100, A300);
 $vintage-warn: mat.define-palette(mat.$red-palette);
 
-$ui-theme: mat.define-light-theme(
+$vintage-theme: mat.define-light-theme(
   (
     color: (
       primary: $vintage-primary,
