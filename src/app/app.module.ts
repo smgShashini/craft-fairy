@@ -25,6 +25,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { BodyComponent } from './body/body.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {
@@ -34,6 +35,10 @@ const appRoutes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent,
+  },
+  {
+    path: '',
+    component: HomeComponent,
   },
 ];
 @NgModule({
@@ -46,6 +51,7 @@ const appRoutes: Routes = [
     DialogBoxComponent,
     ItemCardComponent,
     BodyComponent,
+    HomeComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
