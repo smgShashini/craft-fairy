@@ -17,6 +17,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
   },
 ];
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent, CartComponent],
+  declarations: [AppComponent, NavigationBarComponent, CartComponent, FooterComponent],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
