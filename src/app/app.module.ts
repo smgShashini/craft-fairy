@@ -14,19 +14,31 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const appRoutes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
   },
+  {
+    path: 'checkout',
+    component: CheckoutComponent,
+  },
 ];
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent, CartComponent, FooterComponent],
+  declarations: [
+    AppComponent,
+    NavigationBarComponent,
+    CartComponent,
+    FooterComponent,
+    CheckoutComponent,
+  ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
@@ -42,6 +54,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatBadgeModule,
     MatSelectModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

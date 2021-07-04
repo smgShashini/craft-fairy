@@ -1,0 +1,85 @@
+<!--
+  [Component Name]: CheckoutComponent
+  [Description]   : Display the checkout details
+  [Actions]       : * Get user details
+
+
+-->
+<!-- [Begin : Payment Summary ]-->
+<h1>Payment Summary</h1>
+<div class="payment-summary px-5 pt-5">
+  <mat-grid-list cols="2" rowHeight="25px">
+    <mat-grid-tile> Sub total </mat-grid-tile>
+    <mat-grid-tile> Rs 600 /= </mat-grid-tile>
+    <mat-grid-tile> Delivery charge </mat-grid-tile>
+    <mat-grid-tile> Rs 300 /= </mat-grid-tile>
+    <mat-grid-tile> Total </mat-grid-tile>
+    <mat-grid-tile> Rs 900 /= </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<!-- [End   : Payment Summary ]-->
+<!-- [Begin : Billing and shipping details ]-->
+<h1>Billing and Shipping</h1>
+<div class="checkout-details px-5 pt-5">
+  <form class="example-form">
+    <table class="example-full-width">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First name</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone Number </mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <mat-select>
+              <mat-option value="option1">Option 1</mat-option>
+              <mat-option value="option2">Option 2 </mat-option>
+              <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Postal Code</mat-label>
+            <input matInput #postalCode maxlength="5" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<!-- [End   : Billing and shipping details ]-->
+
+<div class="pay">
+  <mat-checkbox class="example-margin mx-5 pt-4"
+    >I agree to the terms and conditions
+  </mat-checkbox>
+  <br />
+
+  <button mat-raised-button color="primary" class="order">Order now</button>
+</div>
