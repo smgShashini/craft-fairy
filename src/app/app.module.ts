@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,9 +18,16 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
 
+const appRoutes: Routes = [
+  {
+    path: 'cart',
+    component: CartComponent,
+  },
+];
 @NgModule({
   declarations: [AppComponent, NavigationBarComponent, CartComponent],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
