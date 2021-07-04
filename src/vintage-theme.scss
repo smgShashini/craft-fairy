@@ -1,0 +1,18 @@
+@use '~@angular/material' as mat;
+@include mat.core();
+
+$vintage-primary: mat.define-palette(mat.$brown-palette);
+$vintage-accent: mat.define-palette(mat.$green-palette, A200, A100, A300);
+$vintage-warn: mat.define-palette(mat.$red-palette);
+
+$ui-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $vintage-primary,
+      accent: $vintage-accent,
+      warn: $vintage-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($vintage-theme);
