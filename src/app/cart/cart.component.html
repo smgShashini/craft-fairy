@@ -1,0 +1,48 @@
+<!--
+  [Component Name]: CartComponent
+  [Description]   : Display the details of itemxs in the cart
+  [Actions]       : * Clear the cart
+                    * Go to shopping again
+                    * Proceed to checkout
+
+-->
+
+<h1>No item in the shopping cart</h1>
+
+<div class="cart-item">
+  <mat-grid-list cols="7" rowHeight="60px">
+    <mat-grid-tile [colspan]="1" [rowspan]="4">No</mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="4">Item image</mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="4">Details</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="4">Quentity</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="4">Price</mat-grid-tile>
+  </mat-grid-list>
+  <div class="divider"></div>
+  <mat-grid-list cols="7" rowHeight="60px">
+    <mat-grid-tile [colspan]="6" [rowspan]="1">Total Price</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">540/=</mat-grid-tile>
+  </mat-grid-list>
+  <div class="divider"></div>
+  <mat-grid-list cols="7" rowHeight="60px">
+    <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1"
+      ><button mat-raised-button color="primary">
+        Clear cart
+      </button></mat-grid-tile
+    >
+    <mat-grid-tile [colspan]="1" [rowspan]="1"
+      ><button mat-raised-button color="primary">
+        Shop again
+      </button></mat-grid-tile
+    >
+    <mat-grid-tile [colspan]="1" [rowspan]="1"
+      ><button mat-raised-button color="primary" routerLink="/checkout">
+        Checkout
+      </button></mat-grid-tile
+    >
+  </mat-grid-list>
+  <div class="divider"></div>
+  <mat-grid-list cols="7" rowHeight="60px">
+    <mat-grid-tile [colspan]="7" [rowspan]="1"></mat-grid-tile>
+  </mat-grid-list>
+</div>

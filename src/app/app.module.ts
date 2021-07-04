@@ -15,9 +15,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationBarComponent],
+  declarations: [AppComponent, NavigationBarComponent, CartComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
