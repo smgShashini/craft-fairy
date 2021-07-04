@@ -15,11 +15,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 
 const appRoutes: Routes = [
   {
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     CartComponent,
     FooterComponent,
     CheckoutComponent,
+    DialogBoxComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -55,6 +58,7 @@ const appRoutes: Routes = [
     MatBadgeModule,
     MatSelectModule,
     MatCheckboxModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
