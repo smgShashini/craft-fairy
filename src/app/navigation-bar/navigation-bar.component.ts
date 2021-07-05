@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { CraftService } from '../craft.service';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -9,14 +10,28 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./navigation-bar.component.css'],
 })
 export class NavigationBarComponent implements OnInit {
+  //Store  selected specialization id
+  events: string[] = [];
   myControl = new FormControl();
-  options: string[] = ['One', 'Two', 'Three'];
+  craftArray: string[] = []; // Store all the craft items
+  craftItems: any[] = []; // Store item objects from web api
   filteredOptions: Observable<string[]> | undefined;
   selectedItem: string = '';
 
-  constructor() {}
+  constructor(private craftServise: CraftService) {}
 
   ngOnInit() {
+    // Get item list from web api
+    this.craftServise.getItemList().subscribe((data) => {
+      this.craftItems = data;
+      console.log(this.craftItems);
+
+      //create craft list array
+      for (var i = 0; i < this.craftItems.length; i++) {
+        this.craftArray[i] = this.craftItems[i].itemName;
+      }
+      console.log(this.craftArray);
+    });
     // Autocorrection
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
@@ -28,7 +43,7 @@ export class NavigationBarComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.options.filter((option) =>
+    return this.craftArray.filter((option) =>
       option.toLowerCase().includes(filterValue)
     );
   }
