@@ -1,4 +1,11 @@
-<app-navigation-bar> </app-navigation-bar>
+<app-navigation-bar></app-navigation-bar>
+<mat-tab-group animationDuration="3000ms">
+  <mat-tab label="First" [hidden]="true">Content 1</mat-tab>
+  <mat-tab label="Second">Content 2</mat-tab>
+  <mat-tab label="Third">Content 3</mat-tab>
+</mat-tab-group>
+<app-carousel></app-carousel>
+
 <div class="body">
   <router-outlet></router-outlet>
 </div>

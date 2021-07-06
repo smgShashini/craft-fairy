@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
@@ -26,6 +28,8 @@ import { DialogBoxComponent } from './dialog-box/dialog-box.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { CarouselComponent } from './carousel/carousel.component';
 
 const appRoutes: Routes = [
   {
@@ -52,8 +56,11 @@ const appRoutes: Routes = [
     ItemCardComponent,
     BodyComponent,
     HomeComponent,
+    NavBarComponent,
+    CarouselComponent,
   ],
   imports: [
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
@@ -71,6 +78,7 @@ const appRoutes: Routes = [
     MatCheckboxModule,
     MatDialogModule,
     MatCardModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
