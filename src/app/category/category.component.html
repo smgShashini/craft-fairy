@@ -1,8 +1,8 @@
 <mat-tab-group (selectedTabChange)="selectChangeHandler($event)">
-  <mat-tab label="Best selling ">Category 1</mat-tab>
-  <mat-tab label="Paper "> Category 2</mat-tab>
-  <mat-tab label="Wodden "> Category 3 </mat-tab>
-  <mat-tab label="Glass "> Category 3 </mat-tab>
-  <mat-tab label="Cloth "> Category 3 </mat-tab>
-  <mat-tab label="Iron "> Category 3 </mat-tab>
+  <mat-tab label="Best selling "><app-body></app-body></mat-tab>
+  <mat-tab label="Paper "> <app-body *ngIf="paperActive"></app-body></mat-tab>
+  <mat-tab label="Wooden "><app-body *ngIf="woodenActive"></app-body> </mat-tab>
+  <mat-tab label="Glass "><app-body *ngIf="glassActive"></app-body> </mat-tab>
+  <mat-tab label="Cloth "><app-body *ngIf="clothActive"></app-body> </mat-tab>
+  <mat-tab label="Iron "> <app-body *ngIf="ironActive"></app-body></mat-tab>
 </mat-tab-group>

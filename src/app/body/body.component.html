@@ -1,1 +1,18 @@
-<p>body works!</p>
+<mat-grid-list cols="5" rowHeight="350px">
+  <mat-grid-tile *ngFor="let product of displayList">
+    <mat-card>
+      <img src="{{ product.mainImage }}" width="200px" height="200px" />
+      <mat-card-content>
+        <p>
+          {{ product.productName }}<br />
+          Price : Rs {{ product.price }}/=<br />
+          Available items :{{ product.availableItems }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions flex>
+        <button mat-button color="primary">View</button>
+        <button mat-button color="primary">Add to cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
