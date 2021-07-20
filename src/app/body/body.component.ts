@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AddCartSnackBarComponent } from '../add-cart-snack-bar/add-cart-snack-bar.component';
 import { CraftService } from '../craft.service';
 
 @Component({
@@ -14,8 +16,13 @@ export class BodyComponent implements OnDestroy, OnInit {
   subscription: any;
   msg: string = '';
   itemId: number | undefined;
+  snakBarDisplayTime = 2; // Store the dispaly time of snak bar
 
-  constructor(private craftService: CraftService, private router: Router) {
+  constructor(
+    private craftService: CraftService,
+    private router: Router,
+    private _snackBar: MatSnackBar
+  ) {
     this.subscription = this.craftService.currentSelectedItemId.subscribe(
       (item) => {
         this.itemId = item;
@@ -81,4 +88,17 @@ export class BodyComponent implements OnDestroy, OnInit {
   //     }
   //   }
   // }
+
+  viewBtnClicked() {
+    // Navigate to view pcomponent
+    this.router.navigateByUrl('/view');
+  }
+  addToCartBtnClicked() {
+    // Show snak bar
+    this._snackBar.openFromComponent(AddCartSnackBarComponent, {
+      duration: this.snakBarDisplayTime * 1000,
+    });
+
+    // diable add to cart btn
+  }
 }

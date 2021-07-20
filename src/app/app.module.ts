@@ -19,6 +19,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { CartComponent } from './cart/cart.component';
@@ -30,8 +31,16 @@ import { BodyComponent } from './body/body.component';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { CarouselComponent } from './carousel/carousel.component';
+import { CategoryComponent } from './category/category.component';
+import { SearchBodyComponent } from './search-body/search-body.component';
+import { ViewComponent } from './view/view.component';
+import { AddCartSnackBarComponent } from './add-cart-snack-bar/add-cart-snack-bar.component';
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'cart',
     component: CartComponent,
@@ -41,8 +50,16 @@ const appRoutes: Routes = [
     component: CheckoutComponent,
   },
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'product-item',
+    component: BodyComponent,
+  },
+  {
+    path: 'view',
+    component: ViewComponent,
   },
 ];
 @NgModule({
@@ -58,6 +75,10 @@ const appRoutes: Routes = [
     HomeComponent,
     NavBarComponent,
     CarouselComponent,
+    CategoryComponent,
+    SearchBodyComponent,
+    ViewComponent,
+    AddCartSnackBarComponent,
   ],
   imports: [
     HttpClientModule,
@@ -79,6 +100,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     MatCardModule,
     MatTabsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
